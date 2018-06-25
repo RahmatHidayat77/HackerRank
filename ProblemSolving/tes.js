@@ -1,27 +1,17 @@
-let max = 0;
-let value = 0;
-let arr = [1, 2, 3, 4, 5];
-let i, j;
+let n = 6;
+let k = 3;
+let arr = [1, 3, 2, 6, 1, 2];
+let result = 0;
 
-for (i = 0; i < arr.length; i++) {
-  // arr[j] = 0;
-  for (j = 0; j < arr.length; j++) {
-    value += arr[j];
-    console.log(j);
-  }
-  if (value > max) {
-    max = value;
-  }
-}
-let min = max;
-for (i = 0; i < arr.length; i++) {
-  // arr[j] = 0;
-  for (j = 0; j < arr.length; j++) {
-    value += arr[j];
-    console.log(j);
-  }
-  if (value < min) {
-    min = value;
+for (let i = 0; i < arr.length-1; i++) {
+  for (let j = 0; j < arr.length; j++) {
+    console.log(arr[j + 1 + i]);
+    if ((arr[i] + arr[j + 1 + i]) % k === 0) {
+      result += 1;
+    }
+    if (j + 1 + i >= 5) {
+      break;
+    }
   }
 }
-console.log(max, min);
+console.log(result);
