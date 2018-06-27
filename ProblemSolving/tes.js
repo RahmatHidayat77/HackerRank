@@ -1,17 +1,16 @@
-let n = 6;
-let k = 3;
-let arr = [1, 3, 2, 6, 1, 2];
-let result = 0;
+const readline = require("readline");
 
-for (let i = 0; i < arr.length-1; i++) {
-  for (let j = 0; j < arr.length; j++) {
-    console.log(arr[j + 1 + i]);
-    if ((arr[i] + arr[j + 1 + i]) % k === 0) {
-      result += 1;
-    }
-    if (j + 1 + i >= 5) {
-      break;
-    }
-  }
-}
-console.log(result);
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question("Input a? ", (a) => {
+  let first = parseInt(a)
+
+  rl.question("Input b? ", (b) => {
+    let second = parseInt(b)
+    console.log(first+second);
+    rl.close();
+  });
+});
